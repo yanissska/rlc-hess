@@ -334,3 +334,9 @@ loadBracket();
 
 // Polling toutes les 30s — ne re-rend que si updatedAt a changé
 setInterval(() => { load(); loadBracket(); refreshLiveBar(); }, 30_000);
+
+// Redessine les connecteurs SVG si la fenêtre change de taille
+if (typeof ResizeObserver !== "undefined") {
+  new ResizeObserver(() => requestAnimationFrame(drawBracketConnectors))
+    .observe(document.getElementById("bracket-grid"));
+}
