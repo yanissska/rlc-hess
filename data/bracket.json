@@ -13,7 +13,7 @@
           "score2": 0,
           "gameScore1": 2,
           "gameScore2": 1,
-          "isLive": true,
+          "isLive": false,
           "estimatedTime": null,
           "sourceMatchIds": [
             null,
@@ -75,7 +75,7 @@
           "score2": 0,
           "gameScore1": 1,
           "gameScore2": 0,
-          "isLive": false,
+          "isLive": true,
           "estimatedTime": null,
           "sourceMatchIds": [
             null,
@@ -812,5 +812,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-06-28T11:58:42.150Z"
+  "updatedAt": "2026-06-28T11:58:47.386Z"
 }
