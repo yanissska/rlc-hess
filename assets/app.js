@@ -37,15 +37,13 @@ async function load() {
     const res = await fetch(`data/teams.json?t=${Date.now()}`);
     if (!res.ok) throw new Error(res.status);
     const data = await res.json();
+    if (data.updatedAt === _lastTeamsUpdate) return; // pas de changement
+    _lastTeamsUpdate = data.updatedAt;
     const teams = data.teams || [];
 
     counter.textContent = `${teams.length} engagée${teams.length > 1 ? "s" : ""}`;
-
-    if (!teams.length) {
-      empty.hidden = false;
-    } else {
-      grid.innerHTML = teams.map((t, i) => teamRow(t, i + 1)).join("");
-    }
+    empty.hidden = teams.length > 0;
+    if (teams.length) grid.innerHTML = teams.map((t, i) => teamRow(t, i + 1)).join("");
     if (data.updatedAt) {
       updated.textContent = "Mis à jour le " + new Date(data.updatedAt).toLocaleString("fr-FR");
     }
@@ -115,6 +113,8 @@ function matchCard(m) {
 
 // rounds stocké ici pour que drawBracketConnectors puisse y accéder depuis initTabs.
 let _bracketRounds = null;
+let _lastBracketUpdate = null;
+let _lastTeamsUpdate = null;
 
 function drawBracketConnectors() {
   if (!_bracketRounds) return;
@@ -183,23 +183,41 @@ async function loadBracket() {
     const res = await fetch(`data/bracket.json?t=${Date.now()}`);
     if (!res.ok) throw new Error(res.status);
     const data = await res.json();
-    if (!data.rounds?.length) { empty.hidden = false; return; }
+
+    if (!data.rounds?.length) { empty.hidden = false; grid.innerHTML = ""; return; }
+    if (data.updatedAt === _lastBracketUpdate) return; // pas de changement
+    _lastBracketUpdate = data.updatedAt;
 
     _bracketRounds = data.rounds;
     empty.hidden = true;
     grid.innerHTML = "";
     renderBracketTree(data, grid);
 
-    if (data.updatedAt) {
-      const upd = document.getElementById("bracket-updated");
-      if (upd) upd.textContent = "Mis à jour le " + new Date(data.updatedAt).toLocaleString("fr-FR");
+    const upd = document.getElementById("bracket-updated");
+    if (upd && data.updatedAt) {
+      upd.textContent = "Mis à jour le " + new Date(data.updatedAt).toLocaleString("fr-FR");
     }
   } catch (_) {
     empty.hidden = false;
+    grid.innerHTML = "";
   }
 }
 
+function renderLiveBar(container, updatedAt) {
+  let bar = container.querySelector(".bracket-live-bar");
+  if (!bar) {
+    bar = document.createElement("div");
+    bar.className = "bracket-live-bar";
+    container.prepend(bar);
+  }
+  const ts = updatedAt ? new Date(updatedAt).toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" }) : "—";
+  bar.innerHTML = `
+    <span class="blb-live"><span class="blb-liveDot"></span>En direct</span>
+    <span>Dernière synchro : ${ts} · rafraîchi toutes les 30s</span>`;
+}
+
 function renderBracketTree(data, container) {
+  renderLiveBar(container, data.updatedAt);
   const rounds = data.rounds;
   if (!rounds.length) return;
 
@@ -296,3 +314,6 @@ initTabs();
 initDiscordLinks();
 load();
 loadBracket();
+
+// Polling toutes les 30s — ne re-rend que si updatedAt a changé
+setInterval(() => { load(); loadBracket(); }, 30_000);

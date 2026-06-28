@@ -182,13 +182,39 @@ sup { font-size: 0.6em; }
 .updated { color: var(--muted); font-size: 11px; margin-top: 14px; }
 
 .bracket-soon {
-  text-align: center; padding: 70px 20px;
+  text-align: center; padding: 80px 20px;
   border: 1px dashed var(--line); border-radius: var(--radius);
+}
+.bracket-soon .bs-icon {
+  font-size: 44px; margin-bottom: 18px; display: block; opacity: 0.35;
 }
 .bracket-soon h2 {
   font-family: "Oswald", sans-serif; font-size: 22px; margin-bottom: 10px;
 }
 .bracket-soon p { color: var(--muted); max-width: 420px; margin: 0 auto; font-size: 14px; }
+.bracket-soon .bs-sub {
+  margin-top: 22px; display: inline-flex; align-items: center; gap: 7px;
+  font-size: 12px; color: var(--muted); border: 1px solid var(--line);
+  border-radius: 20px; padding: 5px 14px;
+}
+.bs-dot {
+  width: 7px; height: 7px; background: var(--cyan); border-radius: 50%;
+  animation: bspulse 2s ease-in-out infinite;
+}
+@keyframes bspulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+/* Barre de statut live en haut du bracket */
+.bracket-live-bar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 14px; margin-bottom: 16px;
+  background: var(--panel); border-radius: var(--radius);
+  border-left: 3px solid var(--cyan); font-size: 12px; color: var(--muted);
+}
+.bracket-live-bar .blb-live { display: flex; align-items: center; gap: 6px; color: var(--live); font-weight: 600; }
+.blb-liveDot { width: 7px; height: 7px; background: var(--live); border-radius: 50%; animation: bspulse 1.5s ease-in-out infinite; }
 
 /* ── Bracket tree ────────────────────────────────────────── */
 .bt-scroller {
