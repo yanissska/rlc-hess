@@ -8,12 +8,12 @@
           "id": 1,
           "round": 1,
           "bestOf": 3,
-          "status": "ready",
+          "status": "in_progress",
           "score1": 0,
           "score2": 0,
-          "gameScore1": 0,
-          "gameScore2": 0,
-          "isLive": false,
+          "gameScore1": 2,
+          "gameScore2": 1,
+          "isLive": true,
           "estimatedTime": null,
           "sourceMatchIds": [
             null,
@@ -39,7 +39,7 @@
           "id": 2,
           "round": 1,
           "bestOf": 3,
-          "status": "ready",
+          "status": "in_progress",
           "score1": 0,
           "score2": 0,
           "gameScore1": 0,
@@ -70,7 +70,7 @@
           "id": 3,
           "round": 1,
           "bestOf": 3,
-          "status": "ready",
+          "status": "in_progress",
           "score1": 0,
           "score2": 0,
           "gameScore1": 0,
@@ -101,7 +101,7 @@
           "id": 4,
           "round": 1,
           "bestOf": 3,
-          "status": "ready",
+          "status": "in_progress",
           "score1": 0,
           "score2": 0,
           "gameScore1": 0,
@@ -812,5 +812,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-06-28T11:58:03.773Z"
+  "updatedAt": "2026-06-28T11:58:35.736Z"
 }
