@@ -48,6 +48,10 @@ sup { font-size: 0.6em; }
 .nav-links { display: flex; align-items: center; gap: 20px; }
 .nav-links a { color: var(--muted); font-size: 13px; font-weight: 500; }
 .nav-links a:hover { color: var(--text); }
+.nav-twitch {
+  color: #bf94ff !important; font-weight: 600 !important; font-size: 13px;
+}
+.nav-twitch:hover { color: #d4b0ff !important; }
 .nav-discord {
   background: var(--cyan); color: var(--navy) !important; font-weight: 700 !important;
   padding: 6px 14px; border-radius: 5px; font-size: 12px;
@@ -254,14 +258,17 @@ sup { font-size: 0.6em; }
 
 /* ── Cartes de match ─────────────────────────────────────── */
 .bm-card {
+  display: block;
   background: var(--panel);
   border: 1px solid var(--line);
   border-left: 3px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
   transition: border-left-color .12s;
+  text-decoration: none; color: inherit;
 }
 .bm-card:hover { border-left-color: rgba(41,194,221,0.5); }
+a.bm-card.bm-live:hover { border-left-color: var(--cyan); cursor: pointer; }
 .bm-card.bm-live {
   border-left-color: var(--cyan);
   border-top-color: var(--cyan);

@@ -1,6 +1,7 @@
 // Site RLC-HESS — charge data/teams.json et data/bracket.json, gère les onglets.
 
 const DISCORD_INVITE = "https://discord.gg/kKjYH63Hv7";
+const TWITCH_URL = "https://twitch.tv/yanissska";
 
 function esc(s) {
   return String(s ?? "").replace(/[&<>"']/g, (c) =>
@@ -90,7 +91,7 @@ function matchCard(m) {
     ? `<div class="bm-game-score">🔵 <b>${m.gameScore1}</b> — <b>${m.gameScore2}</b> 🔴 <span class="bm-game-label">partie en cours</span></div>`
     : "";
 
-  return `<div class="bm-card ${isDone ? "bm-done" : ""} ${isLive ? "bm-live" : ""} ${pending ? "bm-pending" : ""}" data-mid="${m.id}">
+  const inner = `
     <div class="bm-header">
       <span class="bm-num">M${m.id}</span>
       ${m.estimatedTime ? `<span class="bm-time">⏰ ${esc(m.estimatedTime)}</span>` : ""}
@@ -105,8 +106,13 @@ function matchCard(m) {
     </div>
     <div class="bm-footer">
       <span class="bm-fmt">${m.bestOf === 5 ? "BO5" : "BO3"}</span>
-    </div>
-  </div>`;
+      ${isLive ? `<span class="bm-fmt" style="color:var(--cyan)">▶ Regarder</span>` : ""}
+    </div>`;
+
+  if (isLive) {
+    return `<a class="bm-card bm-live" data-mid="${m.id}" href="${TWITCH_URL}" target="_blank" rel="noopener">${inner}</a>`;
+  }
+  return `<div class="bm-card ${isDone ? "bm-done" : ""} ${pending ? "bm-pending" : ""}" data-mid="${m.id}">${inner}</div>`;
 }
 
 // ── Dessin SVG des connecteurs (pas de closure — lit le DOM en direct) ────────
@@ -203,6 +209,16 @@ async function loadBracket() {
   }
 }
 
+function refreshLiveBar() {
+  const bar = document.querySelector("#bracket-grid .bracket-live-bar");
+  if (!bar) return;
+  const pollTs = new Date().toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
+  const dataSpan = bar.querySelector(".blb-data-ts");
+  const pollSpan = bar.querySelector(".blb-poll-ts");
+  if (pollSpan) pollSpan.textContent = pollTs;
+  // dataSpan est mis à jour uniquement quand de nouvelles données arrivent
+}
+
 function renderLiveBar(container, updatedAt) {
   let bar = container.querySelector(".bracket-live-bar");
   if (!bar) {
@@ -210,10 +226,11 @@ function renderLiveBar(container, updatedAt) {
     bar.className = "bracket-live-bar";
     container.prepend(bar);
   }
-  const ts = updatedAt ? new Date(updatedAt).toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" }) : "—";
+  const dataTs = updatedAt ? new Date(updatedAt).toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" }) : "—";
+  const pollTs = new Date().toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
   bar.innerHTML = `
     <span class="blb-live"><span class="blb-liveDot"></span>En direct</span>
-    <span>Dernière synchro : ${ts} · rafraîchi toutes les 30s</span>`;
+    <span>Données du <b class="blb-data-ts">${dataTs}</b> · vérifié à <b class="blb-poll-ts">${pollTs}</b></span>`;
 }
 
 function renderBracketTree(data, container) {
@@ -316,4 +333,4 @@ load();
 loadBracket();
 
 // Polling toutes les 30s — ne re-rend que si updatedAt a changé
-setInterval(() => { load(); loadBracket(); }, 30_000);
+setInterval(() => { load(); loadBracket(); refreshLiveBar(); }, 30_000);
