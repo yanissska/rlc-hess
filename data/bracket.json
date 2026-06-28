@@ -8,9 +8,9 @@
           "id": 1,
           "round": 1,
           "bestOf": 3,
-          "status": "in_progress",
-          "score1": 0,
-          "score2": 0,
+          "status": "completed",
+          "score1": 2,
+          "score2": 1,
           "gameScore1": 0,
           "gameScore2": 0,
           "isLive": true,
@@ -33,7 +33,11 @@
             "seed": 32,
             "logo": null
           },
-          "winner": null
+          "winner": {
+            "id": 145,
+            "tag": "SLN",
+            "name": "Solene Gaming"
+          }
         },
         {
           "id": 2,
@@ -521,7 +525,13 @@
             1,
             2
           ],
-          "team1": null,
+          "team1": {
+            "id": 145,
+            "tag": "SLN",
+            "name": "Solene Gaming",
+            "seed": 1,
+            "logo": null
+          },
           "team2": null,
           "winner": null
         },
@@ -812,5 +822,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-06-28T11:52:37.965Z"
+  "updatedAt": "2026-06-28T11:56:37.797Z"
 }
