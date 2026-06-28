@@ -1,0 +1,31 @@
+{
+  "tournament": "RLC-HESS",
+  "edition": "3e",
+  "updatedAt": "2026-06-27T00:00:00.000Z",
+  "maxTeams": 16,
+  "registered": 2,
+  "teams": [
+    {
+      "name": "Les Aerials Fous",
+      "tag": "AERO",
+      "logo": null,
+      "status": "registered",
+      "avgRank": 6.5,
+      "players": [
+        { "pseudo": "Maxou", "rank": "Grand Champion", "captain": true },
+        { "pseudo": "Lina", "rank": "Champion", "captain": false }
+      ]
+    },
+    {
+      "name": "Boost Brothers",
+      "tag": "BB",
+      "logo": null,
+      "status": "registered",
+      "avgRank": 4.0,
+      "players": [
+        { "pseudo": "Tom", "rank": "Diamond", "captain": true },
+        { "pseudo": "Kev", "rank": "Platinum", "captain": false }
+      ]
+    }
+  ]
+}

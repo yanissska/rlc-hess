@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Créateur de logo · RLC-HESS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Anton&family=Archivo+Black&family=Audiowide&family=Bebas+Neue&family=Black+Ops+One&family=Bungee&family=Chakra+Petch:wght@600;700&family=Goldman:wght@400;700&family=Montserrat:wght@800;900&family=Orbitron:wght@600;800&family=Oswald:wght@600;700&family=Rajdhani:wght@600;700&family=Righteous&family=Russo+One&family=Saira+Condensed:wght@700;800&family=Squada+One&family=Staatliches&family=Teko:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="maker.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="back" href="../">←</a>
+    <div class="title">Créateur de logo</div>
+    <div class="top-actions">
+      <button id="randomize" class="tbtn" title="Logo aléatoire">🎲</button>
+      <button id="reset" class="tbtn" title="Tout réinitialiser">↺</button>
+      <button id="download" class="tbtn tbtn-primary">⬇️ PNG</button>
+    </div>
+  </header>
+
+  <main class="editor">
+    <!-- Canvas -->
+    <section class="col col-canvas">
+      <div class="stage">
+        <canvas id="logo" width="512" height="512"></canvas>
+      </div>
+      <button id="download-2" class="big-download">⬇️ Télécharger le logo (PNG)</button>
+      <p class="stage-hint">Glisse un élément pour le déplacer · poignée ◢ redimensionner · ⟳ pivoter</p>
+    </section>
+
+    <!-- Ajout + calques -->
+    <aside class="col col-left">
+      <div class="card">
+        <h3>Ajouter</h3>
+        <button class="add-btn full" id="add-text">＋ Ajouter un texte</button>
+        <div class="sub">Ajouter une forme</div>
+        <div class="picker" id="shapes-picker"></div>
+      </div>
+
+      <div class="card">
+        <h3>Calques</h3>
+        <ul class="layers" id="layers"></ul>
+      </div>
+    </aside>
+
+    <!-- Propriétés + modèles -->
+    <aside class="col col-right">
+      <div class="card" id="props-card">
+        <h3 id="props-title">Fond du badge</h3>
+        <div id="props"></div>
+      </div>
+      <div class="card">
+        <h3>Modèles</h3>
+        <div class="presets" id="presets"></div>
+      </div>
+    </aside>
+  </main>
+
+  <script src="maker.js"></script>
+</body>
+</html>

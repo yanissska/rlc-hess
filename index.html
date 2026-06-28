@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RLC-HESS · Tournoi Rocket League 2v2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <!-- Barre de navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="./">
+        <img src="assets/logo.png" alt="" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'brand-mark',textContent:'RH'}))" />
+        <span class="brand-name">RLC-HESS</span>
+      </a>
+      <div class="nav-links">
+        <a href="#equipes">Équipes</a>
+        <a href="#bracket">Bracket</a>
+        <a href="logo-maker/">Créer un logo</a>
+        <a class="nav-discord" href="#" data-discord>Rejoindre le Discord</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Bannière du tournoi -->
+  <header class="banner">
+    <div class="banner-inner">
+      <div class="banner-text">
+        <div class="banner-meta">
+          <span class="chip">Rocket League · Format 2v2</span>
+        </div>
+        <h1>RLC-HESS <em>— 3<sup>e</sup> édition</em></h1>
+        <p>Le tournoi de la communauté. Inscris ton équipe sur le Discord, suis le bracket et les résultats ici.</p>
+        <div class="banner-cta">
+          <a class="btn btn-primary" href="#" data-discord>S'inscrire sur le Discord</a>
+          <a class="btn btn-outline" href="logo-maker/">Créer le logo de mon équipe</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Onglets -->
+  <main class="content">
+    <div class="tabs" role="tablist">
+      <button class="tab active" data-tab="equipes">Équipes</button>
+      <button class="tab" data-tab="bracket">Bracket</button>
+    </div>
+
+    <section id="equipes" class="tab-panel active">
+      <div class="panel-head">
+        <h2>Équipes engagées</h2>
+        <span class="counter" id="counter">—</span>
+      </div>
+      <div id="teams" class="teams"></div>
+      <p id="empty" class="empty" hidden>Aucune équipe engagée pour l'instant.</p>
+      <p id="updated" class="updated"></p>
+    </section>
+
+    <section id="bracket" class="tab-panel">
+      <div id="bracket-grid"></div>
+      <div id="bracket-empty" class="bracket-soon">
+        <h2>Bracket</h2>
+        <p>L'arbre du tournoi apparaîtra ici une fois les inscriptions closes et le tirage effectué.</p>
+      </div>
+      <p id="bracket-updated" class="updated"></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>RLC-HESS · 3<sup>e</sup> édition</span>
+    <span class="dot">•</span>
+    <span>Données mises à jour automatiquement</span>
+  </footer>
+
+  <script src="assets/app.js?v=3"></script>
+</body>
+</html>

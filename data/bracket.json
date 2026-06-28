@@ -1,0 +1,86 @@
+{
+  "updatedAt": "2026-06-28T14:00:00.000Z",
+  "rounds": [
+    {
+      "round": 1,
+      "name": "Quarts de finale",
+      "matches": [
+        {
+          "id": 1, "round": 1, "bestOf": 3, "status": "completed",
+          "score1": 2, "score2": 1, "gameScore1": 0, "gameScore2": 0,
+          "isLive": false, "estimatedTime": "14:00",
+          "sourceMatchIds": [null, null],
+          "team1": { "id": 1, "tag": "NRG", "name": "NRG Esports", "seed": 1, "logo": null },
+          "team2": { "id": 8, "tag": "APEX", "name": "Apex Rising", "seed": 8, "logo": null },
+          "winner": { "id": 1, "tag": "NRG", "name": "NRG Esports" }
+        },
+        {
+          "id": 2, "round": 1, "bestOf": 3, "status": "in_progress",
+          "score1": 1, "score2": 0, "gameScore1": 3, "gameScore2": 1,
+          "isLive": true, "estimatedTime": "14:00",
+          "sourceMatchIds": [null, null],
+          "team1": { "id": 4, "tag": "G2", "name": "G2 Esports", "seed": 4, "logo": null },
+          "team2": { "id": 5, "tag": "FZE", "name": "Faze Clan", "seed": 5, "logo": null },
+          "winner": null
+        },
+        {
+          "id": 3, "round": 1, "bestOf": 3, "status": "completed",
+          "score1": 0, "score2": 2, "gameScore1": 0, "gameScore2": 0,
+          "isLive": false, "estimatedTime": "14:00",
+          "sourceMatchIds": [null, null],
+          "team1": { "id": 3, "tag": "TSM", "name": "TSM", "seed": 3, "logo": null },
+          "team2": { "id": 6, "tag": "SEN", "name": "Sentinels", "seed": 6, "logo": null },
+          "winner": { "id": 6, "tag": "SEN", "name": "Sentinels" }
+        },
+        {
+          "id": 4, "round": 1, "bestOf": 3, "status": "ready",
+          "score1": 0, "score2": 0, "gameScore1": 0, "gameScore2": 0,
+          "isLive": false, "estimatedTime": "14:45",
+          "sourceMatchIds": [null, null],
+          "team1": { "id": 2, "tag": "EG", "name": "Evil Geniuses", "seed": 2, "logo": null },
+          "team2": { "id": 7, "tag": "C9", "name": "Cloud9", "seed": 7, "logo": null },
+          "winner": null
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "name": "Demi-finales",
+      "matches": [
+        {
+          "id": 5, "round": 2, "bestOf": 3, "status": "pending",
+          "score1": 0, "score2": 0, "gameScore1": 0, "gameScore2": 0,
+          "isLive": false, "estimatedTime": null,
+          "sourceMatchIds": [1, 2],
+          "team1": { "id": 1, "tag": "NRG", "name": "NRG Esports", "seed": 1, "logo": null },
+          "team2": null,
+          "winner": null
+        },
+        {
+          "id": 6, "round": 2, "bestOf": 3, "status": "pending",
+          "score1": 0, "score2": 0, "gameScore1": 0, "gameScore2": 0,
+          "isLive": false, "estimatedTime": null,
+          "sourceMatchIds": [3, 4],
+          "team1": { "id": 6, "tag": "SEN", "name": "Sentinels", "seed": 6, "logo": null },
+          "team2": null,
+          "winner": null
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "name": "Finale",
+      "matches": [
+        {
+          "id": 7, "round": 3, "bestOf": 5, "status": "pending",
+          "score1": 0, "score2": 0, "gameScore1": 0, "gameScore2": 0,
+          "isLive": false, "estimatedTime": null,
+          "sourceMatchIds": [5, 6],
+          "team1": null,
+          "team2": null,
+          "winner": null
+        }
+      ]
+    }
+  ]
+}
