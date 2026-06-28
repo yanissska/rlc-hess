@@ -1,0 +1,161 @@
+{
+  "tournament": "RLC-HESS",
+  "edition": "3e",
+  "updatedAt": "2026-06-28T13:22:49.161Z",
+  "maxTeams": 2,
+  "registered": 8,
+  "teams": [
+    {
+      "name": "NRG Esports",
+      "tag": "NRG",
+      "logo": null,
+      "status": "registered",
+      "avgRank": 7,
+      "players": [
+        {
+          "pseudo": "Jstn",
+          "rank": "Grand Champion",
+          "captain": true
+        },
+        {
+          "pseudo": "GarrettG",
+          "rank": "Grand Champion",
+          "captain": false
+        }
+      ]
+    },
+    {
+      "name": "G2 Esports",
+      "tag": "G2",
+      "logo": null,
+      "status": "registered",
+      "avgRank": 7,
+      "players": [
+        {
+          "pseudo": "Mijo",
+          "rank": "Grand Champion",
+          "captain": true
+        },
+        {
+          "pseudo": "Varazdin",
+          "rank": "Grand Champion",
+          "captain": false
+        }
+      ]
+    },
+    {
+      "name": "Sentinels",
+      "tag": "SEN",
+      "logo": null,
+      "status": "registered",
+      "avgRank": 6,
+      "players": [
+        {
+          "pseudo": "Arsenal",
+          "rank": "Champion",
+          "captain": true
+        },
+        {
+          "pseudo": "Firstkiller",
+          "rank": "Champion",
+          "captain": false
+        }
+      ]
+    },
+    {
+      "name": "Evil Geniuses",
+      "tag": "EG",
+      "logo": null,
+      "status": "registered",
+      "avgRank": 7,
+      "players": [
+        {
+          "pseudo": "Torment",
+          "rank": "Grand Champion",
+          "captain": true
+        },
+        {
+          "pseudo": "Chronic",
+          "rank": "Grand Champion",
+          "captain": false
+        }
+      ]
+    },
+    {
+      "name": "Faze Clan",
+      "tag": "FZE",
+      "logo": null,
+      "status": "registered",
+      "avgRank": 5,
+      "players": [
+        {
+          "pseudo": "Dappur",
+          "rank": "Diamant",
+          "captain": true
+        },
+        {
+          "pseudo": "Klassux",
+          "rank": "Diamant",
+          "captain": false
+        }
+      ]
+    },
+    {
+      "name": "Team Vitality",
+      "tag": "VIT",
+      "logo": null,
+      "status": "registered",
+      "avgRank": 7,
+      "players": [
+        {
+          "pseudo": "Scrub",
+          "rank": "Grand Champion",
+          "captain": true
+        },
+        {
+          "pseudo": "Kaydop",
+          "rank": "Grand Champion",
+          "captain": false
+        }
+      ]
+    },
+    {
+      "name": "Cloud9",
+      "tag": "C9",
+      "logo": null,
+      "status": "registered",
+      "avgRank": 6,
+      "players": [
+        {
+          "pseudo": "Torbjorn",
+          "rank": "Champion",
+          "captain": true
+        },
+        {
+          "pseudo": "Mist",
+          "rank": "Champion",
+          "captain": false
+        }
+      ]
+    },
+    {
+      "name": "Apex Rising",
+      "tag": "APEX",
+      "logo": null,
+      "status": "registered",
+      "avgRank": 5,
+      "players": [
+        {
+          "pseudo": "Turbo",
+          "rank": "Diamant",
+          "captain": true
+        },
+        {
+          "pseudo": "Lj",
+          "rank": "Diamant",
+          "captain": false
+        }
+      ]
+    }
+  ]
+}
