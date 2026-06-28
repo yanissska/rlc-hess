@@ -73,7 +73,7 @@
           "status": "in_progress",
           "score1": 0,
           "score2": 0,
-          "gameScore1": 0,
+          "gameScore1": 1,
           "gameScore2": 0,
           "isLive": false,
           "estimatedTime": null,
@@ -105,7 +105,7 @@
           "score1": 0,
           "score2": 0,
           "gameScore1": 0,
-          "gameScore2": 0,
+          "gameScore2": 2,
           "isLive": false,
           "estimatedTime": null,
           "sourceMatchIds": [
@@ -812,5 +812,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-06-28T11:58:35.736Z"
+  "updatedAt": "2026-06-28T11:58:40.412Z"
 }
