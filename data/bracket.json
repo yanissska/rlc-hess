@@ -43,11 +43,11 @@
           "id": 2,
           "round": 1,
           "bestOf": 3,
-          "status": "in_progress",
+          "status": "completed",
           "score1": 0,
-          "score2": 1,
+          "score2": 2,
           "gameScore1": 0,
-          "gameScore2": 1,
+          "gameScore2": 0,
           "isLive": false,
           "estimatedTime": "15:45",
           "sourceMatchIds": [
@@ -68,7 +68,11 @@
             "seed": 5,
             "logo": null
           },
-          "winner": null
+          "winner": {
+            "id": 279,
+            "tag": "SEN",
+            "name": "Sentinels"
+          }
         },
         {
           "id": 3,
@@ -150,13 +154,13 @@
           "id": 5,
           "round": 2,
           "bestOf": 3,
-          "status": "pending",
+          "status": "in_progress",
           "score1": 0,
           "score2": 0,
           "gameScore1": 0,
           "gameScore2": 0,
-          "isLive": false,
-          "estimatedTime": null,
+          "isLive": true,
+          "estimatedTime": "15:45",
           "sourceMatchIds": [
             1,
             2
@@ -168,20 +172,26 @@
             "seed": 1,
             "logo": null
           },
-          "team2": null,
+          "team2": {
+            "id": 279,
+            "tag": "SEN",
+            "name": "Sentinels",
+            "seed": 5,
+            "logo": null
+          },
           "winner": null
         },
         {
           "id": 6,
           "round": 2,
           "bestOf": 3,
-          "status": "ready",
+          "status": "in_progress",
           "score1": 0,
           "score2": 0,
           "gameScore1": 0,
           "gameScore2": 0,
           "isLive": false,
-          "estimatedTime": null,
+          "estimatedTime": "15:45",
           "sourceMatchIds": [
             3,
             4
@@ -230,5 +240,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-07-24T16:21:17.078Z"
+  "updatedAt": "2026-07-24T16:21:20.753Z"
 }
