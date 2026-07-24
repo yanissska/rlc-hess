@@ -45,7 +45,7 @@
           "bestOf": 3,
           "status": "in_progress",
           "score1": 0,
-          "score2": 0,
+          "score2": 1,
           "gameScore1": 0,
           "gameScore2": 1,
           "isLive": false,
@@ -230,5 +230,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-07-24T16:21:14.179Z"
+  "updatedAt": "2026-07-24T16:21:17.078Z"
 }
